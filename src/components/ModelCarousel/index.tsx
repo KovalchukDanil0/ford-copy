@@ -10,9 +10,7 @@ import {
 } from "react";
 
 const dynamicComponents = {
-  copperMotorcraft: dynamic(
-    () => import("@/app/cars/copper-motorcraft/display"),
-  ),
+  CopperMotorcar: dynamic(() => import("@/app/cars/copper-motorcar")),
 };
 
 interface ModelCarousel {

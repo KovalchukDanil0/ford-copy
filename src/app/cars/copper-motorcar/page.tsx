@@ -12,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CopperMotorcraft(): React.ReactElement {
+export default function CopperMotorcar(): React.ReactElement {
   return <main></main>;
 }

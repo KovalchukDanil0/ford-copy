@@ -19,11 +19,11 @@ export default function Home(): React.ReactElement {
   return (
     <main>
       <Billboard
-        src="/cars/copper-motorcraft.png"
-        href="/cars/copper-motorcraft"
-        hl="New Copper Motorcraft"
+        src="/cars/copper-motorcar.png"
+        href="/cars/copper-motorcar"
+        hl="New Copper Motorcar"
         sl="Look at this car!"
-        alt="Copper motorcraft in front of the fountain"
+        alt="Copper motorcar in front of the fountain"
       />
       <Billboard
         src="/cars/standard-gray.png"
@@ -35,9 +35,9 @@ export default function Home(): React.ReactElement {
       <Billboard
         src="/cars/echo-rickshaw.png"
         href="/cars/echo-rickshaw"
-        hl="Echo ricksaw"
+        hl="Echo rickshaw"
         sl="This car is equipped with a silent engine"
-        alt="Echo ricksaw in dark blue fire"
+        alt="Echo rickshaw in dark blue fire"
       />
       <Billboard
         src="/cars/green-tractor.png"
@@ -53,7 +53,7 @@ export default function Home(): React.ReactElement {
         sl="What is that? I don't know... But you should definitely buy it!"
         alt="Shopping cart in the abandoned house"
       />
-      <ModelCarousel carPaths={["copperMotorcraft"]}></ModelCarousel>
+      <ModelCarousel carPaths={["CopperMotorcar"]}></ModelCarousel>
       <Video videoID="AmyPnekwbz8" />
     </main>
   );
