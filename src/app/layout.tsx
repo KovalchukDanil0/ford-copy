@@ -31,7 +31,7 @@ const RootLayout: FC<PropsWithChildren> = function ({ children }) {
       </head>
       <body
         className={twMerge(
-          " mx-auto w-3/4 bg-gray-50 text-black dark:bg-black dark:text-white",
+          "bg-gray-50 text-black lg:mx-auto lg:w-3/4 dark:bg-black dark:text-white",
           inter.className,
         )}
       >

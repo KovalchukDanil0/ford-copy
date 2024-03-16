@@ -9,8 +9,11 @@ import {
   useState,
 } from "react";
 
-const dynamicComponents = {
-  CopperMotorcar: dynamic(() => import("@/app/cars/copper-motorcar")),
+const getDynamicComponent = (module: string) => {
+  return dynamic(() => import(`@/app/cars/${module}/display`), {
+    ssr: false,
+    loading: () => <p>Loading...</p>,
+  });
 };
 
 interface ModelCarousel {
@@ -118,8 +121,7 @@ export default function ModelCarousel({ carPaths }: Readonly<ModelCarousel>) {
           className="carousel-container relative z-0 flex touch-pan-x snap-x snap-mandatory gap-1 overflow-hidden scroll-smooth"
         >
           {carPaths.map((path) => {
-            const DisplayComponent =
-              dynamicComponents[path as keyof typeof dynamicComponents];
+            const DisplayComponent = getDynamicComponent(path);
 
             return (
               <div

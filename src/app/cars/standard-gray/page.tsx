@@ -1,5 +1,4 @@
 import { Metadata } from "next/types";
-import Home from "./home";
 
 const title = "Home Page";
 const description = "This is Home Page, be careful!";
@@ -13,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page(): React.ReactElement {
-  return <Home />;
+export default function StandardGray(): React.ReactElement {
+  return <main></main>;
 }

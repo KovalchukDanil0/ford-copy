@@ -1,9 +1,9 @@
-interface Video {
+interface YouTubeVideo {
   videoID: string;
 }
 
-export default function Video({ videoID }: Readonly<Video>) {
-  const src = `https://www.youtube.com/embed/${videoID}?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com`;
+export default function YouTubeVideo({ videoID }: Readonly<YouTubeVideo>) {
+  const src = `https://www.youtube-nocookie.com/embed/${videoID}`;
 
   return (
     <div className="relative w-full overflow-hidden pt-[56.25%]">
