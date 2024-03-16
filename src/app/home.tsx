@@ -3,6 +3,7 @@
 import Billboard from "@/components/Billboard";
 import EComCard from "@/components/EComCard";
 import YouTubeVideo from "@/components/YouTubeVideo";
+import { Button } from "flowbite-react";
 import Carousel, { ResponsiveType } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -135,6 +136,7 @@ export default function Home(): React.ReactElement {
           href="/cars"
         />
       </Carousel>
+      <Button color="red" href="/blogs"></Button>
     </main>
   );
 }

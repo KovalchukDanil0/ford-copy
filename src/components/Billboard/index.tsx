@@ -2,7 +2,7 @@ import { Button } from "flowbite-react";
 import Image from "next/image";
 import type { ReactElement } from "react";
 
-interface BillboardProps {
+interface Props {
   src?: string;
   hl?: string;
   alt?: string;
@@ -19,14 +19,12 @@ export default function Billboard({
   height = 925,
   marginLeft = 5,
   marginTop = 5,
-  alt = "billboard",
-  href,
   src,
   hl,
+  alt,
+  href,
   sl,
-}: Readonly<BillboardProps>): React.ReactElement {
-  src = src ?? `https://placehold.co/${width}x${height}.jpg`;
-
+}: Readonly<Props>): React.ReactElement {
   let addDiv = false;
 
   let headLineElm: ReactElement;
@@ -55,8 +53,8 @@ export default function Billboard({
 
   const divElm: ReactElement = (
     <div
-      style={{ marginLeft: marginLeft + "%", marginTop: marginTop + "%" }}
       className="absolute left-0 top-0 text-white"
+      style={{ marginLeft: `${marginLeft}%`, marginTop: `${marginTop}%` }}
     >
       {headLineElm!}
       {subLineElm!}
@@ -68,11 +66,15 @@ export default function Billboard({
     <div className="relative">
       <a href={href}>
         <Image
-          style={{ width, height: height / 1.5, objectFit: "cover" }}
-          src={src}
+          className="object-cover"
+          style={{
+            width: `${width}px`,
+            height: `${height}px`,
+          }}
+          src={src!}
           width={width}
           height={height}
-          alt={alt}
+          alt={alt!}
           title={alt}
         />
       </a>

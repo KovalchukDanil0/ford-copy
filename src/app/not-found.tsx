@@ -17,15 +17,18 @@ const alt = "404";
 
 export default function NotFound(): React.ReactElement {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="p-6 lg:p-24">
       <Image
+        className="ml-auto mr-auto block lg:w-1/2"
         src="/cars/missing-car.png"
         alt={alt}
         title={alt}
         width={950}
         height={680}
       />
-      <h2 className="mt-3 text-6xl text-red-500">404 - Page not found</h2>
+      <h2 className="mt-6 text-center text-red-500 lg:mt-3 lg:text-6xl">
+        404 - Page not found
+      </h2>
     </main>
   );
 }

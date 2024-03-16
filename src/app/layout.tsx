@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   description,
 };
 
-const RootLayout: FC<PropsWithChildren> = function ({ children }) {
+const RootLayout: FC<PropsWithChildren> = function ({
+  children,
+}: PropsWithChildren) {
   return (
     <html lang="en">
       <head>
