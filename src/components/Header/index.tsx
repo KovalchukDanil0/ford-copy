@@ -8,12 +8,13 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const navLink = [
     { active: false, alt: "Home", title: "Home", href: "/" },
+    { active: false, alt: "Blogs", title: "Blogs", href: "/blogs" },
     { active: false, alt: "About", title: "About", href: "/about" },
   ];
   const pathname = usePathname();
 
   return (
-    <Navbar fluid>
+    <Navbar fluid className="sticky top-0 z-50">
       <Navbar.Brand as={Link} href="/">
         <Image
           width={40}

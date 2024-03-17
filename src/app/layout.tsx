@@ -33,13 +33,13 @@ const RootLayout: FC<PropsWithChildren> = function ({
       </head>
       <body
         className={twMerge(
-          "bg-gray-50 text-black lg:mx-auto lg:w-3/4 dark:bg-black dark:text-white",
+          "bg-gray-50 text-black dark:bg-black dark:text-white",
           inter.className,
         )}
       >
         <Flowbite theme={{ theme: flowbiteTheme }}>
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
         </Flowbite>
       </body>

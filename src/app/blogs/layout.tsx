@@ -5,7 +5,7 @@ export default function DashboardLayout({
   children,
 }: Readonly<PropsWithChildren>) {
   return (
-    <div id="blog">
+    <div id="blog" className="mx-6">
       {children}
       <h2>Blogs carousel</h2>
     </div>

@@ -16,7 +16,7 @@ interface Props {
 
 export default function Billboard({
   width = 2160,
-  height = 925,
+  height = 750,
   marginLeft = 5,
   marginTop = 5,
   src,
