@@ -13,11 +13,43 @@ const withMDX = require("@next/mdx")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure pageExtensions to include md and mdx
+  webpack(config) {
+    config.resolve.fallback = {
+      // if you miss it, all the other options in fallback, specified
+      // by next.js will be dropped.
+      ...config.resolve.fallback,
+
+      fs: false, // the solution
+    };
+
+    return config;
+  },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  // Optionally, add any other Next.js config below
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/redirect",
+        destination: "https://github.com/KovalchukDanil0/ford-copy",
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // These rewrites are checked after headers/redirects
+        // and before all files including _next/public files which
+        // allows overriding page files
+        {
+          source: "/rewrite",
+          destination: "https://github.com/vercel/next.js/discussions/8207",
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
 };
 
-// Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig);

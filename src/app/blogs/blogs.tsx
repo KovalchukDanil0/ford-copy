@@ -3,12 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Blogs(): React.ReactElement {
+export default function Main({ files }: { files: string[] }) {
   const pathname = usePathname();
+
   return (
     <div className="flex flex-col">
-      <Link href={pathname + "/test"}>Test</Link>
-      <Link href={pathname + "/gg"}>GG</Link>
+      {files.map((file, index) => {
+        if (file === "page.tsx") {
+          return <></>;
+        }
+
+        const fileNoExtension =
+          file.substring(0, file.lastIndexOf(".")) || file;
+
+        return (
+          <Link key={index} href={`${pathname}/${fileNoExtension}`}>
+            {fileNoExtension}
+          </Link>
+        );
+      })}
     </div>
   );
 }

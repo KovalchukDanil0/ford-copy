@@ -1,3 +1,4 @@
+import fs from "fs";
 import { Metadata } from "next/types";
 import Blogs from "./blogs";
 
@@ -14,5 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page(): React.ReactElement {
-  return <Blogs />;
+  const folder = "/app/blogs/[blog]";
+  const files: string[] = fs.readdirSync("src" + folder);
+
+  return <Blogs files={files} />;
 }
